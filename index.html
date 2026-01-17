@@ -18,10 +18,24 @@ body{
     overflow:hidden;
 }
 
-/* ---------- PAGE 1 ---------- */
-#page1{
-    width:100%;
+/* floating confetti (very light) */
+.confetti{
+    position:fixed;
+    top:0; left:0; width:100%; height:100%;
+    pointer-events:none;
 }
+.confetti span{
+    position:absolute;
+    animation:fall 6s linear infinite;
+    font-size:20px;
+}
+@keyframes fall{
+    from{transform:translateY(-10vh); opacity:1;}
+    to{transform:translateY(110vh); opacity:0;}
+}
+
+/* ---------- PAGE 1 ---------- */
+#page1{width:100%;}
 
 h1{
     font-family: "Brush Script MT", cursive;
@@ -30,10 +44,7 @@ h1{
     text-shadow: 0 0 8px rgba(255,255,255,0.8);
 }
 
-.sub{
-    color:#7a2a7a;
-    margin-top:-10px;
-}
+.sub{color:#7a2a7a; margin-top:-10px;}
 
 /* Button */
 #blowBtn{
@@ -48,10 +59,7 @@ h1{
     animation:pulse 1.5s infinite;
     box-shadow:0 0 10px rgba(255,154,162,0.8);
 }
-
-#blowBtn:hover{
-    transform:scale(1.05);
-}
+#blowBtn:hover{transform:scale(1.05);}
 
 @keyframes pulse{
     0%{transform:scale(1);}
@@ -60,14 +68,11 @@ h1{
 }
 
 /* ---------- PAGE 2 ---------- */
-#page2{
-    display:none;
-    width:100%;
-}
+#page2{display:none; width:100%;}
 
-/* Cake */
+/* animated cake gif */
 #cake{
-    width:200px;
+    width:240px;
     animation: rise 1s ease-out;
 }
 
@@ -85,10 +90,7 @@ h1{
     animation: fadeIn 2s forwards;
     animation-delay: 2s;
 }
-
-@keyframes fadeIn{
-    to{opacity:1;}
-}
+@keyframes fadeIn{to{opacity:1;}}
 
 /* Footer name */
 #footer{
@@ -103,17 +105,25 @@ h1{
 
 <body>
 
+<div class="confetti">
+  <span style="left:10%; animation-delay:0s">🎉</span>
+  <span style="left:30%; animation-delay:1s">✨</span>
+  <span style="left:50%; animation-delay:2s">🎀</span>
+  <span style="left:70%; animation-delay:1.5s">🤍</span>
+  <span style="left:90%; animation-delay:0.5s">🎉</span>
+</div>
+
 <!-- PAGE 1 -->
 <div id="page1">
     <h1>HAPPY BIRTHDAY, HIBA 🤍</h1>
     <p class="sub">My favorite surprise today is you.</p>
-
     <button id="blowBtn">Blow the Candles</button>
 </div>
 
 <!-- PAGE 2 -->
 <div id="page2">
-    <img id="cake" src="https://cdn-icons-png.flaticon.com/512/2642/2642058.png" alt="cake">
+    <!-- Easy option: ready-made animated cake GIF -->
+    <img id="cake" src="https://media.tenor.com/3X1LZz0sFQAAAAAj/birthday-cake.gif" alt="animated cake">
 
     <div id="message">
         Hiba, you make everything feel softer just by being here.<br>
