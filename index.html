@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hiba's Birthday</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg,#ffd1dc,#e6ccff,#fff4e6);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    overflow:hidden;
+}
+
+/* ---------- PAGE 1 ---------- */
+#page1{
+    width:100%;
+}
+
+h1{
+    font-family: "Brush Script MT", cursive;
+    font-size:60px;
+    color:#5a1a5a;
+    text-shadow: 0 0 8px rgba(255,255,255,0.8);
+}
+
+.sub{
+    color:#7a2a7a;
+    margin-top:-10px;
+}
+
+/* Button */
+#blowBtn{
+    margin-top:120px;
+    padding:15px 35px;
+    font-size:18px;
+    border:none;
+    border-radius:30px;
+    background:#ff9aa2;
+    color:white;
+    cursor:pointer;
+    animation:pulse 1.5s infinite;
+    box-shadow:0 0 10px rgba(255,154,162,0.8);
+}
+
+#blowBtn:hover{
+    transform:scale(1.05);
+}
+
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.05);}
+    100%{transform:scale(1);}
+}
+
+/* ---------- PAGE 2 ---------- */
+#page2{
+    display:none;
+    width:100%;
+}
+
+/* Cake */
+#cake{
+    width:200px;
+    animation: rise 1s ease-out;
+}
+
+@keyframes rise{
+    from{transform:translateY(50px); opacity:0;}
+    to{transform:translateY(0); opacity:1;}
+}
+
+/* Message */
+#message{
+    margin-top:20px;
+    font-size:18px;
+    color:#5a1a5a;
+    opacity:0;
+    animation: fadeIn 2s forwards;
+    animation-delay: 2s;
+}
+
+@keyframes fadeIn{
+    to{opacity:1;}
+}
+
+/* Footer name */
+#footer{
+    position:absolute;
+    bottom:20px;
+    width:100%;
+    font-size:14px;
+    color:#7a2a7a;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div id="page1">
+    <h1>HAPPY BIRTHDAY, HIBA 🤍</h1>
+    <p class="sub">My favorite surprise today is you.</p>
+
+    <button id="blowBtn">Blow the Candles</button>
+</div>
+
+<!-- PAGE 2 -->
+<div id="page2">
+    <img id="cake" src="https://cdn-icons-png.flaticon.com/512/2642/2642058.png" alt="cake">
+
+    <div id="message">
+        Hiba, you make everything feel softer just by being here.<br>
+        May your heart stay bright and your smile forever warm.<br>
+        Today and always, you deserve all the love in the world 🤍✨
+    </div>
+
+    <div id="footer">With love, MOSEEN</div>
+</div>
+
+<script>
+document.getElementById("blowBtn").addEventListener("click", function(){
+    document.getElementById("page1").style.display="none";
+    document.getElementById("page2").style.display="block";
+});
+</script>
+
+</body>
+</html>
